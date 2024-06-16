@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen flex flex-col items-center bg-primary-bg-color text-text-color">
-        <header className="header w-full bg-primary-bg-color shadow">
+        <header className="header w-full bg-header-bg-color shadow">
           <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 className="text-2xl font-bold">Event Finder</h1>
             <div className="flex items-center space-x-4">

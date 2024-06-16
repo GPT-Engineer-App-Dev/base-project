@@ -3,77 +3,111 @@
 @tailwind utilities;
 
 :root {
-  --primary-bg-color: #000000;
-  --card-bg-color: #D6C9FF;
-  --icon-btn-color: #FFD700;
-  --text-color: #FFFFFF;
-  --font-family: 'Helvetica Neue', sans-serif;
+  --primary-bg-color: #F5F5F5;
+  --secondary-bg-color: #FFFFFF;
+  --header-bg-color: #1A1A1A;
+  --card-bg-color: #F5F5F5;
+  --button-bg-color: #1A1A1A;
+  --button-hover-bg-color: #333333;
+  --text-color: #333333;
+  --header-text-color: #FFFFFF;
+  --link-color: #1A1A1A;
+  --link-hover-color: #333333;
+  --font-family: 'Inter', sans-serif;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 body {
   background-color: var(--primary-bg-color);
   color: var(--text-color);
   font-family: var(--font-family);
-}
-
-.card {
-  background-color: var(--card-bg-color);
-  border-radius: 1rem;
-  padding: 1rem;
-}
-
-.icon-btn {
-  background-color: var(--icon-btn-color);
-  border-radius: 50%;
-  padding: 0.5rem;
-}
-
-.header, .main, .footer {
-  padding: 1rem;
+  font-size: var(--font-size-base);
 }
 
 .header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .header h1 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-xxl);
   font-weight: bold;
 }
 
 .header input {
   padding: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   border: none;
 }
 
 .header .icon-btn {
   margin-left: 0.5rem;
+  background-color: var(--button-bg-color);
+  color: var(--header-text-color);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.header .icon-btn:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.main {
+  padding: 2rem;
 }
 
 .main h2 {
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl);
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .main .event-card {
-  display: flex;
-  align-items: center;
   background-color: var(--card-bg-color);
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   padding: 1rem;
   margin-bottom: 1rem;
+  box-shadow: var(--box-shadow);
 }
 
 .main .event-card h3 {
-  font-size: 1rem;
+  font-size: var(--font-size-lg);
   font-weight: bold;
 }
 
 .main .event-card p {
-  font-size: 0.875rem;
-  color: #A0A0A0;
+  font-size: var(--font-size-base);
+  color: #666666;
+}
+
+.button {
+  background-color: var(--button-bg-color);
+  color: var(--header-text-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: var(--link-hover-color);
 }
