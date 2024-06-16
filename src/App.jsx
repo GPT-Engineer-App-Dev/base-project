@@ -33,6 +33,7 @@ function App() {
                 <button className="icon-btn p-2 rounded-full hover:bg-gray-200">
                   <i className="fas fa-user"></i>
                 </button>
+                <a href="/venues" className="text-white px-4 py-2 rounded-md bg-blue-500 hover:bg-blue-700">Venues</a>
               </div>
             </div>
           </div>
