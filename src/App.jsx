@@ -7,11 +7,11 @@ function App() {
   const { data: events, error, isLoading } = useEvents();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center items-center min-h-screen"><div className="loader"></div></div>;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div className="flex justify-center items-center min-h-screen"><div>Error: {error.message}</div></div>;
   }
 
   return (

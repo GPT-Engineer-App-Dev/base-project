@@ -2,18 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+.loader {
+  border-top-color: #3498db;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 :root {
-  --primary-bg-color: #F5F5F5;
+  --primary-bg-color: #F0F2F5;
   --secondary-bg-color: #FFFFFF;
-  --header-bg-color: #1A1A1A;
-  --card-bg-color: #F5F5F5;
-  --button-bg-color: #1A1A1A;
-  --button-hover-bg-color: #333333;
-  --text-color: #333333;
+  --header-bg-color: #1F2937;
+  --card-bg-color: #FFFFFF;
+  --button-bg-color: #2563EB;
+  --button-hover-bg-color: #1D4ED8;
+  --text-color: #111827;
   --header-text-color: #FFFFFF;
-  --link-color: #1A1A1A;
-  --link-hover-color: #333333;
-  --font-family: 'Inter', sans-serif;
+  --link-color: #2563EB;
+  --link-hover-color: #1D4ED8;
+  --font-family: 'Roboto', sans-serif;
   --font-size-base: 16px;
   --font-size-lg: 18px;
   --font-size-xl: 24px;
@@ -87,7 +103,7 @@ body {
 
 .main .event-card p {
   font-size: var(--font-size-base);
-  color: #666666;
+  color: #6B7280;
 }
 
 .button {

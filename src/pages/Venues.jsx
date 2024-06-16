@@ -34,8 +34,8 @@ const Venues = () => {
     deleteVenue.mutate(id);
   };
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error.message}</div>;
+  if (isLoading) return <div className="flex justify-center items-center min-h-screen"><div className="loader"></div></div>;
+  if (error) return <div className="flex justify-center items-center min-h-screen"><div>Error: {error.message}</div></div>;
 
   return (
     <div className="container mx-auto px-4 py-8">
