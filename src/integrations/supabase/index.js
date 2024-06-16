@@ -34,6 +34,7 @@ const fromSupabase = async (query) => {
 |------------|-------------|--------|----------|
 | id         | uuid        | string | true     |
 | user_id    | uuid        | string | true     |
+| title      | text        | string | true     |
 | content    | text        | string | true     |
 | created_at | timestamptz | string | true     |
 
@@ -56,7 +57,7 @@ export const useUsers = () => useQuery({
 });
 
 export const useUser = (id) => useQuery({
-    queryKey: ['users', id],
+    queryKey: ['user', id],
     queryFn: () => fromSupabase(supabase.from('users').select('*').eq('id', id).single()),
 });
 
@@ -76,6 +77,7 @@ export const useUpdateUser = () => {
         mutationFn: (updatedUser) => fromSupabase(supabase.from('users').update(updatedUser).eq('id', updatedUser.id)),
         onSuccess: () => {
             queryClient.invalidateQueries('users');
+            queryClient.invalidateQueries(['user', updatedUser.id]);
         },
     });
 };
@@ -97,7 +99,7 @@ export const usePosts = () => useQuery({
 });
 
 export const usePost = (id) => useQuery({
-    queryKey: ['posts', id],
+    queryKey: ['post', id],
     queryFn: () => fromSupabase(supabase.from('posts').select('*').eq('id', id).single()),
 });
 
@@ -117,6 +119,7 @@ export const useUpdatePost = () => {
         mutationFn: (updatedPost) => fromSupabase(supabase.from('posts').update(updatedPost).eq('id', updatedPost.id)),
         onSuccess: () => {
             queryClient.invalidateQueries('posts');
+            queryClient.invalidateQueries(['post', updatedPost.id]);
         },
     });
 };
@@ -138,7 +141,7 @@ export const useComments = () => useQuery({
 });
 
 export const useComment = (id) => useQuery({
-    queryKey: ['comments', id],
+    queryKey: ['comment', id],
     queryFn: () => fromSupabase(supabase.from('comments').select('*').eq('id', id).single()),
 });
 
@@ -158,6 +161,7 @@ export const useUpdateComment = () => {
         mutationFn: (updatedComment) => fromSupabase(supabase.from('comments').update(updatedComment).eq('id', updatedComment.id)),
         onSuccess: () => {
             queryClient.invalidateQueries('comments');
+            queryClient.invalidateQueries(['comment', updatedComment.id]);
         },
     });
 };
