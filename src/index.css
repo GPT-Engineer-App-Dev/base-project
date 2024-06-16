@@ -1,3 +1,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-bg-color: #000000;
+  --card-bg-color: #D6C9FF;
+  --icon-btn-color: #FFD700;
+  --text-color: #FFFFFF;
+  --font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.icon-btn {
+  background-color: var(--icon-btn-color);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.header, .main, .footer {
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.header .icon-btn {
+  margin-left: 0.5rem;
+}
+
+.main h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.main .event-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.main .event-card h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.main .event-card p {
+  font-size: 0.875rem;
+  color: #A0A0A0;
+}
